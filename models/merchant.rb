@@ -5,7 +5,7 @@ class Merchant
   attr_reader :id, :name
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
@@ -16,6 +16,6 @@ class Merchant
     @id = result['id'].to_i
   end
 
-  
+
 
 end
