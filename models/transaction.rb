@@ -2,12 +2,12 @@ require_relative( '../db/sql_runner' )
 
 class Transaction
 
-  attr_reader :id, :date, :merchant_id, :tag_id
+  attr_reader :id, :date, :amount, :merchant_id, :tag_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @date = options['date']
-    @amount = options['amount']*100.to_i
+    @amount = options['amount'].to_i
     @merchant_id = options['merchant_id'].to_i
     @tag_id = options['tag_id'].to_i
   end
@@ -18,10 +18,6 @@ class Transaction
       '#{@date}', #{amount}, #{@merchant_id}, #{@tag_id})
       RETURNING id"
     @id = SqlRunner.run(sql)[0]['id'].to_i
-  end
-
-  def amount
-    return @amount.to_f/100
   end
 
   def merchant

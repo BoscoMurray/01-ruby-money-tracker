@@ -29,7 +29,7 @@ Merchant.delete_all
 
 @transaction1 = Transaction.new({
   "date" => "2017-04-10",
-  "amount" => 89.99,
+  "amount" => 89,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag1.id
   })
@@ -37,11 +37,11 @@ Merchant.delete_all
 
 @transaction2 = Transaction.new({
     "date" => "2017-04-15",
-    "amount" => 75.46,
+    "amount" => 75,
     "merchant_id" => @merchant2.id,
     "tag_id" => @tag2.id
     })
 @transaction2.save
 
-# binding.pry
+binding.pry
 nil
