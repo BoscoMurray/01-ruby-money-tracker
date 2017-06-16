@@ -10,9 +10,15 @@ class Tag
   end
 
   def save
-    sql = "INSERT INTO tags (name) VALUES (#{@name})
+    sql = "INSERT INTO tags (name) VALUES ('#{@name}')
       RETURNING id"
-    @id = SqlRunner(sql)[0]['id'].to_i
+    @id = SqlRunner.run(sql)[0]['id'].to_i
+  end
+
+  def self.all
+    sql = "SELECT * FROM tags"
+    tags = SqlRunner.run(sql)
+    return tags.map { |tag| Tag.new(tag) }
   end
 
   def self.delete_all

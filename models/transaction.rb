@@ -21,7 +21,7 @@ class Transaction
   end
 
   def amount
-    return @amount/100.to_f
+    return @amount.to_f/100
   end
 
   # def date
@@ -32,6 +32,12 @@ class Transaction
   #   errors.add(:price, "should be at least 0.01") if price.nil? || price < 0.01 
   # end 
 
+  def self.all
+    sql = "SELECT * FROM transactions"
+    transactions = SqlRunner.run(sql)
+    return transactions.map { |transaction| Transaction.new(transaction) }
+  end
+  
   def self.delete_all
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)

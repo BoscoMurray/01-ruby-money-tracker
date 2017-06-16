@@ -10,9 +10,15 @@ class Merchant
   end
 
   def save
-    sql = "INSERT INTO merchants (name) VALUES (#{@name})
+    sql = "INSERT INTO merchants (name) VALUES ('#{@name}')
       RETURNING id"
-    @id = SqlRunner(sql)[0]['id'].to_i
+    @id = SqlRunner.run(sql)[0]['id'].to_i
+  end
+
+  def self.all
+    sql = "SELECT * FROM merchants"
+    merchants = SqlRunner.run(sql)
+    return merchants.map { |merchant| Merchant.new(merchant) }
   end
 
   def self.delete_all
