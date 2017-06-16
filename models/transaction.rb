@@ -24,6 +24,16 @@ class Transaction
     return @amount.to_f/100
   end
 
+  def merchant
+    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
+    return SqlRunner.run(sql)[0]['name']
+  end
+
+  def tag
+    sql = "SELECT * FROM tags WHERE id = #{@tag_id}"
+    return SqlRunner.run(sql)[0]['name']
+  end
+
   # def date
   #   return Date.parse @date
   # end
@@ -37,7 +47,7 @@ class Transaction
     transactions = SqlRunner.run(sql)
     return transactions.map { |transaction| Transaction.new(transaction) }
   end
-  
+
   def self.delete_all
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
