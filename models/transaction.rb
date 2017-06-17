@@ -41,7 +41,14 @@ class Transaction
   def self.all
     sql = "SELECT * FROM transactions"
     transactions = SqlRunner.run(sql)
-    return transactions.map { |transaction| Transaction.new(transaction) }
+    unsorted = transactions.map { |transaction| Transaction.new(transaction) }
+    return unsorted.sort_by { |t| [t.date] }
+  end
+
+  def self.total
+    total = 0
+    self.all.each { |transaction| total += transaction.amount.to_i }
+    return total
   end
 
   def self.delete_all
