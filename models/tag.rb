@@ -1,4 +1,5 @@
-require_relative( '../db/sql_runner' )
+require_relative('../db/sql_runner')
+require_relative('transaction')
 
 class Tag
 
@@ -17,9 +18,20 @@ class Tag
 
   def self.all
     sql = "SELECT * FROM tags"
-    tags = SqlRunner.run(sql)
-    unsorted = tags.map { |tag| Tag.new(tag) }
-    return unsorted.sort_by { |t| [t.name] }
+    return Tag.map_items( SqlRunner.run(sql) )
+  end
+
+  def self.total(id)
+    total = 0
+    sql = "SELECT * FROM transactions WHERE tag_id = #{id}"
+    transactions = Transaction.map_items(SqlRunner.run(sql))
+    transactions.each { |transaction| total += transaction.amount }
+    return total
+  end
+
+  def self.map_items(hashes)
+    result = hashes.map { |tag| Tag.new(tag) }
+    return result.sort_by { |t| [t.name] }
   end
 
   def self.delete_all

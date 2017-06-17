@@ -1,4 +1,13 @@
 <h1>Merchants</h1>
 
 <p>New Merchant Button</p>
-<p>List of merchants</p>
+<br>
+<h3>Total spent per merchant:</h3>
+<table>
+<% @merchants.each do |merchant| %>
+  <tr>
+    <td><%= merchant.name %></td>
+    <td><%= Merchant.total(merchant.id) %></td>
+  </tr>
+  <% end %>
+</table>

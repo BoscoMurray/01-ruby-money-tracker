@@ -1,4 +1,5 @@
-require_relative( '../db/sql_runner' )
+require_relative('../db/sql_runner')
+require_relative('transaction')
 
 class Merchant
 
@@ -17,9 +18,20 @@ class Merchant
 
   def self.all
     sql = "SELECT * FROM merchants"
-    merchants = SqlRunner.run(sql)
-    unsorted = merchants.map { |merchant| Merchant.new(merchant) }
-    return unsorted.sort_by { |t| [t.name] }
+    return Merchant.map_items( SqlRunner.run(sql) )
+  end
+
+  def self.total(id)
+    total = 0
+    sql = "SELECT * FROM transactions WHERE merchant_id = #{id}"
+    transactions = Transaction.map_items( SqlRunner.run(sql) )
+    transactions.each { |transaction| total += transaction.amount }
+    return total
+  end
+
+  def self.map_items(hashes)
+    result = hashes.map { |merchant| Merchant.new(merchant) }
+    return result.sort_by { |t| [t.name] }
   end
 
   def self.delete_all

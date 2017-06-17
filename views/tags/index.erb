@@ -1,4 +1,13 @@
 <h1>Tags</h1>
 
 <p>New Tag Button</p>
-<p>List of tags</p>
+<br>
+<h3>Total spent per tag:</h3>
+<table>
+<% @tags.each do |tag| %>
+  <tr>
+    <td><%= tag.name %></td>
+    <td><%= Tag.total(tag.id) %></td>
+  </tr>
+  <% end %>
+</table>

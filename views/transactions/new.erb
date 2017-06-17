@@ -1,11 +1,15 @@
 <h1>New Transaction</h1>
 
 <form action="/transactions" method="post">
+
+  <label for="date">Date (yyyy-mm-dd)</label>
+  <input type="text" name="date" id="date"/>
+
   <label>
     Merchant:
       <select name="merchant_id">
         <% @merchants.each do |merchant| %>
-        <option value="<% merchant.id %>"><%= merchant.name.upcase %></option>
+        <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
         <% end %>
       </select>
   </label>
@@ -14,11 +18,14 @@
     Tag:
       <select name="tag_id">
         <% @tags.each do |tag| %>
-        <option value="<% tag.id %>"><%= tag.name.upcase %></option>
+        <option value=<%= tag.id %>><%= tag.name.upcase %></option>
         <% end %>
       </select>
   </label>
 
+  <label for="amount">Amount</label>
+  <input type="number" name="amount" id="amount"/>
 
+  <input type="submit" value="Save Transaction"/>
   
 </form>

@@ -1,4 +1,4 @@
-require_relative( '../db/sql_runner' )
+require_relative('../db/sql_runner')
 
 class Transaction
 
@@ -30,25 +30,21 @@ class Transaction
     return SqlRunner.run(sql)[0]['name']
   end
 
-  # def date
-  #   return Date.parse @date
-  # end
-
-  # def validate 
-  #   errors.add(:price, "should be at least 0.01") if price.nil? || price < 0.01 
-  # end 
-
   def self.all
     sql = "SELECT * FROM transactions"
-    transactions = SqlRunner.run(sql)
-    unsorted = transactions.map { |transaction| Transaction.new(transaction) }
-    return unsorted.sort_by { |t| [t.date] }
+    transactions = Transaction.map_items(SqlRunner.run(sql))
+    return transactions.sort_by { |t| [t.date] }
   end
 
   def self.total
     total = 0
     self.all.each { |transaction| total += transaction.amount.to_i }
     return total
+  end
+
+  def self.map_items(hashes)
+    result = hashes.map { |transaction| Transaction.new(transaction) }
+    return result.sort_by { |t| [t.date] }
   end
 
   def self.delete_all
