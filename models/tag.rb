@@ -11,9 +11,9 @@ class Tag
   end
 
   def save
-    sql = "INSERT INTO tags (name) VALUES ('#{@name}')
+    sql = "INSERT INTO tags (name) VALUES ('#{ @name }')
       RETURNING id"
-    @id = SqlRunner.run(sql)[0]['id'].to_i
+    @id = SqlRunner.run(sql)[ 0 ][ 'id' ].to_i
   end
 
   def self.all
@@ -21,12 +21,14 @@ class Tag
     return Tag.map_items( SqlRunner.run(sql) )
   end
 
-  def self.total(id)
-    total = 0
-    sql = "SELECT * FROM transactions WHERE tag_id = #{id}"
-    transactions = Transaction.map_items(SqlRunner.run(sql))
-    transactions.each { |transaction| total += transaction.amount }
-    return total
+  def self.txs_by_id(id)
+    sql = "SELECT * FROM transactions WHERE tag_id = #{ id }"
+    return Transaction.map_items( SqlRunner.run(sql) )
+  end
+
+  def self.total_by_id(id)
+    txs = self.txs_by_id(id)
+    return Transaction.total(txs)
   end
 
   def self.map_items(hashes)
@@ -40,7 +42,7 @@ class Tag
   end
 
   def self.delete(id)
-    sql = "DELETE FROM tags WHERE id = #{id}"
+    sql = "DELETE FROM tags WHERE id = #{ id }"
     SqlRunner.run(sql)
   end
 

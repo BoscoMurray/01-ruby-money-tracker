@@ -15,30 +15,36 @@ class Transaction
   def save
     sql = "INSERT INTO transactions (
       date, amount, merchant_id, tag_id) VALUES (
-      '#{@date}', #{amount}, #{@merchant_id}, #{@tag_id})
+      '#{ @date }', #{ amount }, #{ @merchant_id }, #{ @tag_id })
       RETURNING id"
-    @id = SqlRunner.run(sql)[0]['id'].to_i
+    @id = SqlRunner.run(sql)[ 0 ][ 'id' ].to_i
   end
 
   def merchant
-    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
-    return SqlRunner.run(sql)[0]['name']
+    sql = "SELECT * FROM merchants WHERE id = #{ @merchant_id }"
+    return SqlRunner.run(sql)[ 0 ][ 'name' ]
   end
 
   def tag
-    sql = "SELECT * FROM tags WHERE id = #{@tag_id}"
-    return SqlRunner.run(sql)[0]['name']
+    sql = "SELECT * FROM tags WHERE id = #{ @tag_id }"
+    return SqlRunner.run(sql)[ 0 ][ 'name' ]
   end
 
   def self.all
     sql = "SELECT * FROM transactions"
-    transactions = Transaction.map_items(SqlRunner.run(sql))
+    transactions = Transaction.map_items( SqlRunner.run(sql) )
     return transactions.sort_by { |t| [t.date] }
   end
 
-  def self.total
+  def self.date_range(txs, from, to)
+    txs_by_date = []
+    txs.each { |tx| txs_by_date << tx if tx.date >= from && tx.date <= to }
+    return txs_by_date
+  end
+
+  def self.total(txs)
     total = 0
-    self.all.each { |transaction| total += transaction.amount.to_i }
+    txs.each { |tx| total += tx.amount.to_i }
     return total
   end
 
@@ -53,7 +59,7 @@ class Transaction
   end
 
   def self.delete(id)
-    sql = "DELETE FROM transactions WHERE id = #{id}"
+    sql = "DELETE FROM transactions WHERE id = #{ id }"
     SqlRunner.run(sql)
   end
 

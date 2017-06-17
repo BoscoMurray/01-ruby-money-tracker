@@ -7,7 +7,7 @@
 <% @merchants.each do |merchant| %>
   <tr>
     <td><%= merchant.name %></td>
-    <td><%= Merchant.total(merchant.id) %></td>
+    <td><%= Merchant.total_by_id(merchant.id) %></td>
   </tr>
   <% end %>
 </table>

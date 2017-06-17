@@ -7,7 +7,7 @@
 <% @tags.each do |tag| %>
   <tr>
     <td><%= tag.name %></td>
-    <td><%= Tag.total(tag.id) %></td>
+    <td><%= Tag.total_by_id(tag.id) %></td>
   </tr>
   <% end %>
 </table>
