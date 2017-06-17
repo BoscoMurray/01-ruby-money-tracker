@@ -8,57 +8,57 @@ Tag.delete_all
 Merchant.delete_all
 
 @merchant1 = Merchant.new({
-  "name" => "amazon"
+  "name" => "Amazon"
   })
 @merchant1.save
 
 @merchant2 = Merchant.new({
-  "name" => "lidl"
+  "name" => "Lidl"
   })
 @merchant2.save
 
 @merchant3 = Merchant.new({
-  "name" => "bitstamp"
+  "name" => "Bitstamp"
   })
 @merchant3.save
 
 @merchant4 = Merchant.new({
-  "name" => "green_network"
+  "name" => "Green Network"
   })
 @merchant4.save
 
 @merchant5 = Merchant.new({
-  "name" => "pub"
+  "name" => "Pub"
   })
 @merchant5.save
 
 @tag1 = Tag.new({
-  "name" => "clothes"
+  "name" => "Clothes"
   })
 @tag1.save
 
 @tag2 = Tag.new({
-  "name" => "food"
+  "name" => "Food"
   })
 @tag2.save
 
 @tag3 = Tag.new({
-  "name" => "energy"
+  "name" => "Energy"
   })
 @tag3.save
 
 @tag4 = Tag.new({
-  "name" => "social"
+  "name" => "Social"
   })
 @tag4.save
 
 @tag5 = Tag.new({
-  "name" => "investments"
+  "name" => "Investments"
   })
 @tag5.save
 
 @tag6 = Tag.new({
-  "name" => "misc"
+  "name" => "Misc"
   })
 @tag6.save
 

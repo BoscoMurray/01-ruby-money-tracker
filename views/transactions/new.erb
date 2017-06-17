@@ -1,6 +1,24 @@
 <h1>New Transaction</h1>
 
-<form>
-  
+<form action="/transactions" method="post">
+  <label>
+    Merchant:
+      <select name="merchant_id">
+        <% @merchants.each do |merchant| %>
+        <option value="<% merchant.id %>"><%= merchant.name.upcase %></option>
+        <% end %>
+      </select>
+  </label>
+
+  <label>
+    Tag:
+      <select name="tag_id">
+        <% @tags.each do |tag| %>
+        <option value="<% tag.id %>"><%= tag.name.upcase %></option>
+        <% end %>
+      </select>
+  </label>
+
+
   
 </form>

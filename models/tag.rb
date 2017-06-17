@@ -18,7 +18,8 @@ class Tag
   def self.all
     sql = "SELECT * FROM tags"
     tags = SqlRunner.run(sql)
-    return tags.map { |tag| Tag.new(tag) }
+    unsorted = tags.map { |tag| Tag.new(tag) }
+    return unsorted.sort_by { |t| [t.name] }
   end
 
   def self.delete_all

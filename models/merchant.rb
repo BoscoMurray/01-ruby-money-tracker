@@ -18,7 +18,8 @@ class Merchant
   def self.all
     sql = "SELECT * FROM merchants"
     merchants = SqlRunner.run(sql)
-    return merchants.map { |merchant| Merchant.new(merchant) }
+    unsorted = merchants.map { |merchant| Merchant.new(merchant) }
+    return unsorted.sort_by { |t| [t.name] }
   end
 
   def self.delete_all
