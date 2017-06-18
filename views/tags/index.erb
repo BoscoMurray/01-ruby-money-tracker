@@ -1,15 +1,15 @@
 <h1>Tags</h1>
 
 <li>
-  <a href="/tags/new">Add tag</a>
+  <a href="/tags/new">Add Tag</a>
 </li>
 
 <br>
-<h3>Total spent per tag:</h3>
+<h3>Total Spent by Tag:</h3>
 <table>
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= tag.name %></td>
+    <td><%= tag.name.upcase %></td>
     <td><%= Tag.total_by_id(tag.id) %></td>
   </tr>
   <% end %>

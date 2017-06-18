@@ -13,8 +13,8 @@
   <tr>
     <td><%= transaction.date %></td>
     <td><%= transaction.amount %></td>
-    <td><%= transaction.merchant %></td>
-    <td><%= transaction.tag %></td>
+    <td><%= transaction.merchant.upcase %></td>
+    <td><%= transaction.tag.upcase %></td>
   </tr>
   <% end %>
 </table>

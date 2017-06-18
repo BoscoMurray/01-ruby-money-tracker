@@ -1,4 +1,4 @@
-<h1>Add new Merchant</h1>
+<h1>Add New Tag</h1>
 
 <form action="/tags" method="post">
   
@@ -9,11 +9,11 @@
   
 </form>
 <br>
-<h3>Tags:</h3>
+<h3>Saved Tags:</h3>
 <table>
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= tag.name %></td>
+    <td><%= tag.name.upcase %></td>
   </tr>
   <% end %>
 </table>
