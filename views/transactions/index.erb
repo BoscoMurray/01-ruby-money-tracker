@@ -4,9 +4,18 @@
 
 <form method="get" action="/transactions">
   <label for="from">From:</label>
-  <input type="text" name="from" id="from"/>
+  <% if @from != nil %>
+    <input type="text" name="from" id="from" value="<%= @from %>"/>
+  <% else %>
+    <input type="text" name="from" id="from"/>
+  <% end %>
+
   <label for="to">To:</label>
-  <input type="text" name="to" id="to"/>
+  <% if @to != nil %>
+    <input type="text" name="to" id="to" value="<%= @to %>"/>
+  <% else %>
+    <input type="text" name="to" id="to"/>
+  <% end %>
 
   <input type="submit" value="Filter By Date"/>
 </form>

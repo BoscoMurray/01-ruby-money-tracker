@@ -5,6 +5,8 @@ require('pry-byebug')
 
 get '/transactions' do
   if params[:from] && params[:to]
+    @from = params[:from]
+    @to = params[:to]
     txs = Transaction.all
     @transactions = Transaction.date_range( txs, params['from'], params['to'] )
   else
