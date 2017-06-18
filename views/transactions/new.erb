@@ -5,20 +5,20 @@
   <label for="date">Date (yyyy-mm-dd)</label>
   <input type="text" name="date" id="date"/>
 
-  <label>
+  <label for="merchant_select">
     Merchant:
-      <select name="merchant_id">
+      <select name="merchant_id" id="merchant_select">
         <% @merchants.each do |merchant| %>
-        <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
+          <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
         <% end %>
       </select>
   </label>
 
-  <label>
+  <label for="tag_select">
     Tag:
-      <select name="tag_id">
+      <select name="tag_id" id="tag_select">
         <% @tags.each do |tag| %>
-        <option value=<%= tag.id %>><%= tag.name.upcase %></option>
+          <option value=<%= tag.id %>><%= tag.name.upcase %></option>
         <% end %>
       </select>
   </label>
