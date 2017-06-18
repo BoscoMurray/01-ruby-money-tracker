@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_reader :id, :date, :amount, :merchant_id, :tag_id
+  attr_reader :id
+  attr_accessor :date, :amount, :merchant_id, :tag_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -20,6 +21,14 @@ class Transaction
     @id = SqlRunner.run(sql)[ 0 ][ 'id' ].to_i
   end
 
+  def update
+    sql = "UPDATE transactions SET
+      date = '#{ @date }', amount = #{ @amount },
+      merchant_id = #{ @merchant_id }, tag_id = '#{ @tag_id }'
+      WHERE id = #{ @id }"
+    SqlRunner.run(sql)
+  end
+
   def merchant
     sql = "SELECT * FROM merchants WHERE id = #{ @merchant_id }"
     return SqlRunner.run(sql)[ 0 ][ 'name' ]
@@ -34,6 +43,12 @@ class Transaction
     sql = "SELECT * FROM transactions"
     transactions = Transaction.map_items( SqlRunner.run(sql) )
     return transactions.sort_by { |t| [t.date] }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    result = SqlRunner.run(sql)[ 0 ]
+    return Transaction.new(result)
   end
 
   def self.date_range(txs, from, to)

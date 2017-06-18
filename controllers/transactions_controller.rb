@@ -20,6 +20,11 @@ post '/transactions' do
   redirect to("/transactions")
 end
 
+get '/transactions/:id' do
+  @transaction = Transaction.find(params['id'])
+  erb(:"transactions/show")
+end
+
 post '/transactions/:id/delete' do
   Transaction.delete(params[:id])
   redirect to("/transactions")
