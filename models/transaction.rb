@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('date')
 
 class Transaction
 
@@ -60,6 +61,18 @@ class Transaction
     total = 0
     txs.each { |tx| total += tx.amount.to_i }
     return total
+  end
+
+  def self.txs_month_current
+    from = Date.new(Date.today.year, Date.today.month, 1).to_s
+    to = Date.today.to_s
+    return Transaction.date_range(self.all, from, to)
+  end
+
+  def self.txs_month_minus(value)
+    from = Date.new(Date.today.year, Date.today.month - value, 1).to_s
+    to = Date.new(Date.today.year, Date.today.month - value, -1).to_s
+    return Transaction.date_range(self.all, from, to)
   end
 
   def self.map_items(hashes)
