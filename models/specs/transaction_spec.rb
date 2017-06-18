@@ -9,7 +9,7 @@ class TransactionTest < MiniTest::Test
 
     @transaction1 = Transaction.new({
       "id" => 1,
-      "amount" => 49.99,
+      "amount" => 49,
       "date" => "2017-06-01",
       "merchant_id" => 2,
       "tag_id" => 3
@@ -17,7 +17,7 @@ class TransactionTest < MiniTest::Test
 
     @transaction2 = Transaction.new({
       "id" => 2,
-      "amount" => 49.99,
+      "amount" => 50,
       "date" => "2017-05-10",
       "merchant_id" => 4,
       "tag_id" => 5
@@ -30,7 +30,7 @@ class TransactionTest < MiniTest::Test
   end
 
   def test_amount
-    assert_equal(49.99, @transaction2.amount)
+    assert_equal(50, @transaction2.amount)
   end
 
   def test_date
@@ -43,6 +43,11 @@ class TransactionTest < MiniTest::Test
 
   def test_tag_id
     assert_equal(5, @transaction2.tag_id)
+  end
+
+  def test_date_range
+    txs = [@transaction1, @transaction2]
+    assert_equal( 1, Transaction.date_range( txs, "2017-05-01", "2017-05-30" ).count )
   end
 
 end

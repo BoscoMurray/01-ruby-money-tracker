@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/transaction' )
+require('pry-byebug')
 
 get '/transactions' do
   @transactions = Transaction.all
@@ -36,6 +37,14 @@ post '/transactions/:id' do
   transaction = Transaction.new(params)
   transaction.update
   redirect to "/transactions/#{ params['id'] }"
+end
+
+get '/transactions/:from/:to' do
+  txs = Transaction.all
+  @transactions = Transaction.date_range( txs, params['from'], params['to'] )
+  @total = Transaction.total(@transactions)
+  binding.pry
+  erb(:"transactions/index")
 end
 
 post '/transactions/:id/delete' do
