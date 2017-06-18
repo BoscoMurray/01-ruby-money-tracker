@@ -41,8 +41,7 @@ class Transaction
 
   def self.all
     sql = "SELECT * FROM transactions"
-    transactions = Transaction.map_items( SqlRunner.run(sql) )
-    return transactions.sort_by { |t| [t.date] }
+    return Transaction.map_items( SqlRunner.run(sql) )
   end
 
   def self.find(id)
