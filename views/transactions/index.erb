@@ -2,14 +2,13 @@
 
 <h3>Total spent: <%= @total %></h3>
 
-<h3>Transactions By Date (YYYY-MM-DD):</h3>
 <form method="get" action="/transactions">
   <label for="from">From:</label>
   <input type="text" name="from" id="from"/>
   <label for="to">To:</label>
   <input type="text" name="to" id="to"/>
 
-  <input type="submit" value="List Transactions"/>
+  <input type="submit" value="Filter By Date"/>
 </form>
 <br>
 
@@ -24,7 +23,7 @@
   <% @transactions.each do |transaction| %>
   <tr>
     <td><%= transaction.date %></td>
-    <td><%= transaction.amount %></td>
+    <td><a href="/transactions/<%= transaction.id %>"><%= transaction.amount %></td>
     <td><%= transaction.merchant.upcase %></td>
     <td><%= transaction.tag.upcase %></td>
   </tr>
