@@ -4,14 +4,14 @@
 
 <form method="get" action="/transactions">
   <label for="from">From:</label>
-  <% if @from != nil %>
+  <% if @from %>
     <input type="text" name="from" id="from" value="<%= @from %>"/>
   <% else %>
     <input type="text" name="from" id="from"/>
   <% end %>
 
   <label for="to">To:</label>
-  <% if @to != nil %>
+  <% if @to %>
     <input type="text" name="to" id="to" value="<%= @to %>"/>
   <% else %>
     <input type="text" name="to" id="to"/>
