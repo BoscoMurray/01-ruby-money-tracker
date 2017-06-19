@@ -26,6 +26,10 @@
   border-right: 1px solid #bbb;
  }
 
+ #nav li:first-child a {
+  border-left: 1px solid #bbb;
+}
+
  #this-month {
   margin: 0 auto;
   margin-top: 80px;
@@ -44,9 +48,15 @@
   width: 418px;
 }
 
+#last-3 div {
+  display: inline-block;
+  margin: 0 ;
+}
+
  body, html {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 /*ul li {

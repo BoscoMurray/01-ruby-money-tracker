@@ -18,14 +18,17 @@
 </div>
 
 <div id="last-3">
-  <h3>Spent Last 3 Months</h3>
+  <h4>Spent Last 3 Months</h4>
   <div>
-    <h4><%= @month_minus3 %>: <%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
+    <h4><%= @month_minus3 %></h4>
+    <h4><%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
   </div>
   <div>
-    <h4><%= @month_minus2 %>: <%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
+    <h4><%= @month_minus2 %></h4>
+    <h4><%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
   </div>
   <div>
-    <h4><%= @month_minus1 %>: <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
+    <h4><%= @month_minus1 %></h4>
+    <h4><%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
   </div>
 </div>
