@@ -1,0 +1,72 @@
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  float: left;
+  padding: 0;
+  background-color: #333;
+ }
+
+#nav ul {
+  list-style: none;
+  width: 430px;
+  margin: 0 auto;
+  padding:  0;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  border-right: 1px solid #bbb;
+ }
+
+ #this-month {
+  margin: 0 auto;
+  margin-top: 80px;
+  border: 5px double black;
+  width: 418px;
+ }
+
+ #this-month div {
+  margin: 20px auto;
+ }
+
+#last-3 {
+  margin: 0 auto;
+  margin-top: 46px;
+  border: 5px double black;
+  width: 418px;
+}
+
+ body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/*ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+  overflow: hidden;
+
+  float: left;
+  border-right: 1px solid #bbb;
+}*/
+
+/*li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}*/
+
+.active {
+    background-color: #4CAF50;
+}
