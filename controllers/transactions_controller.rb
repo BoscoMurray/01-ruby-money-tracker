@@ -23,6 +23,7 @@ get '/transactions/new' do
 end
 
 post '/transactions' do
+  params['amount'] = params['amount'].to_f * 100
   transaction = Transaction.new(params)
   transaction.save
   redirect to("/transactions")

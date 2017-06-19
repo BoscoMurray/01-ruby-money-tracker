@@ -1,10 +1,10 @@
 <h1>Cashboard</h1>
 
-<h3>Spent this month: <%= @total_current %></h3>
+<h3>Spent this month: <%= sprintf("%.2f", @total_current.to_f / 100) %></h3>
 <h3>Display budget remaining this month</h3>
 <br>
 
 <h3>Spent Last 3 Months</h3>
-<h4><%= @month_minus3 %>: <%= @total_minus3 %></h4>
-<h4><%= @month_minus2 %>: <%= @total_minus2 %></h4>
-<h4><%= @month_minus1 %>: <%= @total_minus1 %></h4>
+<h4><%= @month_minus3 %>: <%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
+<h4><%= @month_minus2 %>: <%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
+<h4><%= @month_minus1 %>: <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>

@@ -32,7 +32,7 @@
   </label>
 
   <label for="amount">Amount</label>
-  <input type="number" name="amount" id="amount" value="<%= @transaction.amount %>"/>
+  <input type="number" name="amount" id="amount" value="<%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %>"/>
 
   <input type="submit" value="Save Transaction"/>
   

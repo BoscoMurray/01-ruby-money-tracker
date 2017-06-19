@@ -64,7 +64,7 @@ Merchant.delete_all
 
 @transaction01 = Transaction.new({
   "date" => "2017-03-28",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag1.id
   })
@@ -72,7 +72,7 @@ Merchant.delete_all
 
 @transaction02 = Transaction.new({
     "date" => "2017-03-10",
-    "amount" => 75,
+    "amount" => 7535,
     "merchant_id" => @merchant2.id,
     "tag_id" => @tag2.id
     })
@@ -80,7 +80,7 @@ Merchant.delete_all
 
 @transaction03 = Transaction.new({
   "date" => "2017-03-05",
-  "amount" => 150,
+  "amount" => 15056,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag3.id
   })
@@ -88,7 +88,7 @@ Merchant.delete_all
 
 @transaction04 = Transaction.new({
   "date" => "2017-03-10",
-  "amount" => 89,
+  "amount" => 7289,
   "merchant_id" => @merchant4.id,
   "tag_id" => @tag4.id
   })
@@ -96,7 +96,7 @@ Merchant.delete_all
 
 @transaction05 = Transaction.new({
   "date" => "2017-03-15",
-  "amount" => 89,
+  "amount" => 3300,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag5.id
   })
@@ -104,7 +104,7 @@ Merchant.delete_all
 
 @transaction06 = Transaction.new({
   "date" => "2017-03-21",
-  "amount" => 89,
+  "amount" => 10000,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag6.id
   })
@@ -112,7 +112,7 @@ Merchant.delete_all
 
 @transaction07 = Transaction.new({
   "date" => "2017-03-22",
-  "amount" => 89,
+  "amount" => 7800,
   "merchant_id" => @merchant2.id,
   "tag_id" => @tag1.id
   })
@@ -120,7 +120,7 @@ Merchant.delete_all
 
 @transaction08 = Transaction.new({
   "date" => "2017-03-27",
-  "amount" => 89,
+  "amount" => 11000,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag2.id
   })
@@ -128,7 +128,7 @@ Merchant.delete_all
 
 @transaction09 = Transaction.new({
     "date" => "2017-03-15",
-    "amount" => 100,
+    "amount" => 10000,
     "merchant_id" => @merchant4.id,
     "tag_id" => @tag3.id
     })
@@ -136,7 +136,7 @@ Merchant.delete_all
 
 @transaction10 = Transaction.new({
   "date" => "2017-03-04",
-  "amount" => 200,
+  "amount" => 20000,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag4.id
   })
@@ -144,7 +144,7 @@ Merchant.delete_all
 
 @transaction11 = Transaction.new({
   "date" => "2017-04-28",
-  "amount" => 89,
+  "amount" => 8955,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag1.id
   })
@@ -152,7 +152,7 @@ Merchant.delete_all
 
 @transaction12 = Transaction.new({
     "date" => "2017-04-10",
-    "amount" => 75,
+    "amount" => 9544,
     "merchant_id" => @merchant2.id,
     "tag_id" => @tag2.id
     })
@@ -160,7 +160,7 @@ Merchant.delete_all
 
 @transaction13 = Transaction.new({
   "date" => "2017-04-05",
-  "amount" => 150,
+  "amount" => 15029,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag3.id
   })
@@ -168,7 +168,7 @@ Merchant.delete_all
 
 @transaction14 = Transaction.new({
   "date" => "2017-04-10",
-  "amount" => 89,
+  "amount" => 8974,
   "merchant_id" => @merchant4.id,
   "tag_id" => @tag4.id
   })
@@ -176,7 +176,7 @@ Merchant.delete_all
 
 @transaction15 = Transaction.new({
   "date" => "2017-04-15",
-  "amount" => 89,
+  "amount" => 12099,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag5.id
   })
@@ -184,7 +184,7 @@ Merchant.delete_all
 
 @transaction16 = Transaction.new({
   "date" => "2017-04-21",
-  "amount" => 89,
+  "amount" => 9999,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag6.id
   })
@@ -192,7 +192,7 @@ Merchant.delete_all
 
 @transaction17 = Transaction.new({
   "date" => "2017-04-22",
-  "amount" => 89,
+  "amount" => 7999,
   "merchant_id" => @merchant2.id,
   "tag_id" => @tag1.id
   })
@@ -200,7 +200,7 @@ Merchant.delete_all
 
 @transaction18 = Transaction.new({
   "date" => "2017-04-27",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag2.id
   })
@@ -208,7 +208,7 @@ Merchant.delete_all
 
 @transaction19 = Transaction.new({
     "date" => "2017-04-15",
-    "amount" => 100,
+    "amount" => 10000,
     "merchant_id" => @merchant4.id,
     "tag_id" => @tag3.id
     })
@@ -216,7 +216,7 @@ Merchant.delete_all
 
 @transaction20 = Transaction.new({
   "date" => "2017-04-04",
-  "amount" => 75,
+  "amount" => 7500,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag4.id
   })
@@ -224,7 +224,7 @@ Merchant.delete_all
 
 @transaction21 = Transaction.new({
   "date" => "2017-05-28",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag1.id
   })
@@ -232,7 +232,7 @@ Merchant.delete_all
 
 @transaction22 = Transaction.new({
     "date" => "2017-05-10",
-    "amount" => 75,
+    "amount" => 7500,
     "merchant_id" => @merchant2.id,
     "tag_id" => @tag2.id
     })
@@ -240,7 +240,7 @@ Merchant.delete_all
 
 @transaction23 = Transaction.new({
   "date" => "2017-05-05",
-  "amount" => 150,
+  "amount" => 15000,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag3.id
   })
@@ -248,7 +248,7 @@ Merchant.delete_all
 
 @transaction24 = Transaction.new({
   "date" => "2017-05-10",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant4.id,
   "tag_id" => @tag4.id
   })
@@ -256,7 +256,7 @@ Merchant.delete_all
 
 @transaction25 = Transaction.new({
   "date" => "2017-05-15",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag5.id
   })
@@ -264,7 +264,7 @@ Merchant.delete_all
 
 @transaction26 = Transaction.new({
   "date" => "2017-05-21",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag6.id
   })
@@ -272,7 +272,7 @@ Merchant.delete_all
 
 @transaction27 = Transaction.new({
   "date" => "2017-05-22",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant2.id,
   "tag_id" => @tag1.id
   })
@@ -280,7 +280,7 @@ Merchant.delete_all
 
 @transaction28 = Transaction.new({
   "date" => "2017-05-27",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag2.id
   })
@@ -288,7 +288,7 @@ Merchant.delete_all
 
 @transaction29 = Transaction.new({
     "date" => "2017-05-15",
-    "amount" => 50,
+    "amount" => 5000,
     "merchant_id" => @merchant4.id,
     "tag_id" => @tag3.id
     })
@@ -296,7 +296,7 @@ Merchant.delete_all
 
 @transaction30 = Transaction.new({
   "date" => "2017-05-04",
-  "amount" => 100,
+  "amount" => 10000,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag4.id
   })
@@ -304,7 +304,7 @@ Merchant.delete_all
 
 @transaction31 = Transaction.new({
   "date" => "2017-06-28",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag1.id
   })
@@ -312,7 +312,7 @@ Merchant.delete_all
 
 @transaction32 = Transaction.new({
     "date" => "2017-06-10",
-    "amount" => 75,
+    "amount" => 7500,
     "merchant_id" => @merchant2.id,
     "tag_id" => @tag2.id
     })
@@ -320,7 +320,7 @@ Merchant.delete_all
 
 @transaction33 = Transaction.new({
   "date" => "2017-06-05",
-  "amount" => 150,
+  "amount" => 15000,
   "merchant_id" => @merchant3.id,
   "tag_id" => @tag3.id
   })
@@ -328,7 +328,7 @@ Merchant.delete_all
 
 @transaction34 = Transaction.new({
   "date" => "2017-06-10",
-  "amount" => 89,
+  "amount" => 8900,
   "merchant_id" => @merchant4.id,
   "tag_id" => @tag4.id
   })
@@ -336,7 +336,7 @@ Merchant.delete_all
 
 @transaction35 = Transaction.new({
   "date" => "2017-06-15",
-  "amount" => 89,
+  "amount" => 9599,
   "merchant_id" => @merchant5.id,
   "tag_id" => @tag5.id
   })
@@ -344,7 +344,7 @@ Merchant.delete_all
 
 @transaction36 = Transaction.new({
   "date" => "2017-06-21",
-  "amount" => 89,
+  "amount" => 12000,
   "merchant_id" => @merchant1.id,
   "tag_id" => @tag6.id
   })

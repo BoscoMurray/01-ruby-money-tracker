@@ -9,7 +9,7 @@
   </tr>
   <tr>
     <td><%= @transaction.date %></td>
-    <td><%= @transaction.amount %></td>
+    <td><%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %></td>
     <td><%= @transaction.merchant %></td>
     <td><%= @transaction.tag %></td>
   </tr>
