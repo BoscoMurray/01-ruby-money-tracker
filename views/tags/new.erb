@@ -8,15 +8,17 @@
   </ul>
 </div>
 
-<form action="/tags" method="post">
-  
-  <label for="name">Tag Name:</label>
-  <input type="text" name="name" id="name">
+<div id="tm-new">
+  <form action="/tags" method="post">
+    
+    <label for="name">Tag Name:</label>
+    <input type="text" name="name" id="name">
 
-  <input type="submit" value="Save Tag"/>
-  
-</form>
-<br>
+    <input type="submit" value="Save Tag"/>
+    
+  </form>
+</div>
+
 <h3>Saved Tags:</h3>
 <table>
 <% @tags.each do |tag| %>

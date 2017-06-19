@@ -8,17 +8,20 @@
   </ul>
 </div>
 
-<li>
-  <a href="/merchants/new">Add Merchant</a>
-</li>
+<div id="link">
+  <li>
+    <a href="/merchants/new">Add Merchant</a>
+  </li>
+</div>
 
-<br>
-<h3>Total Spent by Merchant:</h3>
-<table>
-<% @merchants.each do |merchant| %>
-  <tr>
-    <td><%= merchant.name.upcase %></td>
-    <td><%= sprintf( "%.2f", Merchant.total_by_id(merchant.id).to_f / 100 ) %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="table">
+  <h4>Total Spent by Merchant</h4>
+  <table>
+  <% @merchants.each do |merchant| %>
+    <tr>
+      <td><%= merchant.name.upcase %></td>
+      <td><%= sprintf( "%.2f", Merchant.total_by_id(merchant.id).to_f / 100 ) %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

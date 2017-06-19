@@ -8,16 +8,18 @@
   </ul>
 </div>
 
-<form action="/merchants" method="post">
-  
-  <label for="name">Merchant Name:</label>
-  <input type="text" name="name" id="name">
+<div id="tm-new">
+  <form action="/merchants" method="post">
+    
+    <label for="name">New Merchant</label>
+    <input type="text" name="name" id="name">
 
-  <input type="submit" value="Save Merchant"/>
-  
-</form>
-<br>
-<h3>Saved Merchants:</h3>
+    <input type="submit" value="Save"/>
+    
+  </form>
+</div>
+
+<h4>Saved Merchants</h4>
 <table>
 <% @merchants.each do |merchant| %>
   <tr>

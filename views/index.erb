@@ -10,10 +10,10 @@
 
 <div id="this-month">
   <div>
-  <h4>Spent this month: <%= sprintf("%.2f", @total_current.to_f / 100) %></h4>
+  <h4>Spent This Month: <%= sprintf("%.2f", @total_current.to_f / 100) %></h4>
   </div>
   <div>
-  <h4>Budget remaining: <%= 1000 - (sprintf("%.2f", @total_current.to_f / 100)).to_f %></h4>
+  <h4>Budget Remaining: <%= 1000 - (sprintf("%.2f", @total_current.to_f / 100)).to_f %></h4>
   </div>
 </div>
 

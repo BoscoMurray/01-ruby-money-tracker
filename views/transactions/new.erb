@@ -8,34 +8,41 @@
   </ul>
 </div>
 
-<h3>Enter transaction details</h3>
+<div id="form">
+  <form action="/transactions" method="post">
 
-<form action="/transactions" method="post">
+    <p>
+    <label for="date">Date (YYYY-MM-DD)</label>
+    <input type="text" name="date" id="date"/>
+    </p>
 
-  <label for="date">Date (YYYY-MM-DD)</label>
-  <input type="text" name="date" id="date"/>
+    <p>
+    <label for="merchant_select">
+      Merchant:
+        <select name="merchant_id" id="merchant_select">
+          <% @merchants.each do |merchant| %>
+            <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
+          <% end %>
+        </select>
+    </label>
+    </p>
 
-  <label for="merchant_select">
-    Merchant:
-      <select name="merchant_id" id="merchant_select">
-        <% @merchants.each do |merchant| %>
-          <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
-        <% end %>
-      </select>
-  </label>
+    <p>
+    <label for="tag_select">
+      Tag:
+        <select name="tag_id" id="tag_select">
+          <% @tags.each do |tag| %>
+            <option value=<%= tag.id %>><%= tag.name.upcase %></option>
+          <% end %>
+        </select>
+    </label>
+    </p>
 
-  <label for="tag_select">
-    Tag:
-      <select name="tag_id" id="tag_select">
-        <% @tags.each do |tag| %>
-          <option value=<%= tag.id %>><%= tag.name.upcase %></option>
-        <% end %>
-      </select>
-  </label>
+    <p>
+    <label for="amount">Amount</label>
+    <input type="decimal" name="amount" id="amount"/>
 
-  <label for="amount">Amount</label>
-  <input type="decimal" name="amount" id="amount"/>
-
-  <input type="submit" value="Save Transaction"/>
-  
-</form>
+    <input type="submit" value="Save Transaction"/>
+    </p>
+  </form>
+</div>
