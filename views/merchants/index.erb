@@ -13,12 +13,15 @@
 </div>
 
 <div id="table">
-  <h4>Total Spent by Merchant</h4>
   <table>
-  <% @merchants.each do |merchant| %>
+    <tr>
+      <th>Merchant</th>
+      <th>Amount</th>
+    </tr>
+    <% @merchants.each do |merchant| %>
     <tr>
       <td><%= merchant.name.upcase %></td>
-      <td><%= sprintf( "%.2f", Merchant.total_by_id(merchant.id).to_f / 100 ) %></td>
+      <td>£ <%= sprintf( "%.2f", Merchant.total_by_id(merchant.id).to_f / 100 ) %></td>
     </tr>
     <% end %>
   </table>

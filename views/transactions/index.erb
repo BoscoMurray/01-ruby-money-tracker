@@ -12,6 +12,7 @@
   <h4>Total Spent: <%= sprintf( "%.2f", @total.to_f / 100) %></h4>
 
   <form method="get" action="/transactions">
+  <p>
     <label for="from">From:</label>
     <% if @from %>
       <input type="text" name="from" id="from" value="<%= @from %>"/>
@@ -28,6 +29,7 @@
 
     <input type="submit" value="Filter By Date"/>
   </form>
+  </p>
 </div>
 
 <div id="table">

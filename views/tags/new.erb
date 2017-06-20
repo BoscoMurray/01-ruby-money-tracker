@@ -19,11 +19,13 @@
   </form>
 </div>
 
-<h3>Saved Tags:</h3>
-<table>
-<% @tags.each do |tag| %>
-  <tr>
-    <td><%= tag.name.upcase %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="saved">
+  <h4>Saved Tags</h4>
+  <table>
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.name.upcase %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

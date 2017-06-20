@@ -21,11 +21,13 @@
 
 <div id="saved">
   <h4>Saved Merchants</h4>
-  <table>
-  <% @merchants.each do |merchant| %>
-    <tr>
-      <td><%= merchant.name.upcase %></td>
-    </tr>
-    <% end %>
-  </table>
+  <div id="saved-table">
+    <table>
+    <% @merchants.each do |merchant| %>
+      <tr>
+        <td><%= merchant.name.upcase %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
