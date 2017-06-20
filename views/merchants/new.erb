@@ -11,7 +11,7 @@
 <div id="tm-new">
   <form action="/merchants" method="post">
     
-    <label for="name">New Merchant</label>
+    <label for="name">New Merchant:</label>
     <input type="text" name="name" id="name">
 
     <input type="submit" value="Save"/>
@@ -19,11 +19,13 @@
   </form>
 </div>
 
-<h4>Saved Merchants</h4>
-<table>
-<% @merchants.each do |merchant| %>
-  <tr>
-    <td><%= merchant.name.upcase %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="saved">
+  <h4>Saved Merchants</h4>
+  <table>
+  <% @merchants.each do |merchant| %>
+    <tr>
+      <td><%= merchant.name.upcase %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

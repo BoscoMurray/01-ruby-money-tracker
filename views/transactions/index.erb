@@ -30,19 +30,21 @@
   </form>
 </div>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Amount</th>
-    <th>Merchant</th>
-    <th>Tag</th>
-  </tr>
-  <% @transactions.each do |transaction| %>
-  <tr>
-    <td><%= transaction.date %></td>
-    <td><a href="/transactions/<%= transaction.id %>"><%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
-    <td><%= transaction.merchant.upcase %></td>
-    <td><%= transaction.tag.upcase %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="table">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Merchant</th>
+      <th>Tag</th>
+    </tr>
+    <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.date %></td>
+      <td><a href="/transactions/<%= transaction.id %>"><%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
+      <td><%= transaction.merchant.upcase %></td>
+      <td><%= transaction.tag.upcase %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
