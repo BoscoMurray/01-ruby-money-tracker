@@ -9,7 +9,7 @@
 </div>
 
 <div id="total">
-  <h4>Total Spent: <%= sprintf( "%.2f", @total.to_f / 100) %></h4>
+  <h4>Total Spent: £ <%= sprintf( "%.2f", @total.to_f / 100) %></h4>
 
   <form method="get" action="/transactions">
   <p>
@@ -43,7 +43,7 @@
     <% @transactions.each do |transaction| %>
     <tr>
       <td><%= transaction.date %></td>
-      <td><a href="/transactions/<%= transaction.id %>"><%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
+      <td><a href="/transactions/<%= transaction.id %>">£ <%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
       <td><%= transaction.merchant.upcase %></td>
       <td><%= transaction.tag.upcase %></td>
     </tr>

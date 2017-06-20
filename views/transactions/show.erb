@@ -8,22 +8,28 @@
   </ul>
 </div>
 
-<h2>Edit or delete transaction</h2>
+<div id="show">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Merchant</th>
+      <th>Tag</th>
+    </tr>
+    <tr>
+      <td><%= @transaction.date %></td>
+      <td>£ <%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %></td>
+      <td><%= @transaction.merchant %></td>
+      <td><%= @transaction.tag %></td>
+    </tr>
+  </table>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Amount</th>
-    <th>Merchant</th>
-    <th>Tag</th>
-  </tr>
-  <tr>
-    <td><%= @transaction.date %></td>
-    <td><%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %></td>
-    <td><%= @transaction.merchant %></td>
-    <td><%= @transaction.tag %></td>
-  </tr>
-</table>
+  <p>
+  <a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
+  <form action="/transactions/<%= @transaction.id %>/delete" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+  </p>
 
-<a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
-<form action="/transactions/<%= @transaction.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+</div>
+
