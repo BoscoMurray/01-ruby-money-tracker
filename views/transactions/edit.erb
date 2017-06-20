@@ -8,42 +8,54 @@
   </ul>
 </div>
 
-<h3>Edit Transaction</h3>
+<div id="show">
+  <form action="/transactions/<%= @transaction.id %>" method="post">
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Merchant</th>
+        <th>Tag</th>
+      </tr>
 
-<form action="/transactions/<%= @transaction.id %>" method="post">
+      <tr>
+        <td>
+          <input type="text" name="date" id="date" value="<%= @transaction.date %>"/>
+        </td>
 
-  <label for="date">Date (yyyy-mm-dd)</label>
-  <input type="text" name="date" id="date" value="<%= @transaction.date %>"/>
+        <td>
+          <input type="number" name="amount" id="amount" value="<%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %>"/>
+        </td>
 
-  <label for="merchant_select">
-    Merchant:
-      <select name="merchant_id" id="merchant_select" selected="<%= @transaction.merchant %>">
-        <% @merchants.each do |merchant| %>
-          <% if merchant.id == @transaction.merchant_id %>
-            <option value=<%= merchant.id %> selected><%= merchant.name.upcase %></option>
-          <% else %>
-            <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
-          <% end %>
-        <% end %>
-      </select>
-  </label>
+        <td>
+          <select name="merchant_id" id="merchant_select" selected="<%= @transaction.merchant %>">
+            <% @merchants.each do |merchant| %>
+              <% if merchant.id == @transaction.merchant_id %>
+                <option value=<%= merchant.id %> selected><%= merchant.name.upcase %></option>
+              <% else %>
+                <option value=<%= merchant.id %>><%= merchant.name.upcase %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </td>
 
-  <label for="tag_select">
-    Tag:
-      <select name="tag_id" id="tag_select" selected="<%= @transaction.tag %>">
-        <% @tags.each do |tag| %>
-          <% if tag.id == @transaction.tag_id %>
-            <option value=<%= tag.id %> selected><%= tag.name.upcase %></option>
-          <% else %>
-            <option value=<%= tag.id %>><%= tag.name.upcase %></option>
-          <% end %>
-        <% end %>
-      </select>
-  </label>
+        <td>
+          <select name="tag_id" id="tag_select" selected="<%= @transaction.tag %>">
+            <% @tags.each do |tag| %>
+              <% if tag.id == @transaction.tag_id %>
+                <option value=<%= tag.id %> selected><%= tag.name.upcase %></option>
+              <% else %>
+                <option value=<%= tag.id %>><%= tag.name.upcase %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+    </table>
 
-  <label for="amount">Amount</label>
-  <input type="number" name="amount" id="amount" value="<%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %>"/>
+    <p>
+    <input type="submit" value="Save Changes"/>
+    </p>
 
-  <input type="submit" value="Save Transaction"/>
-  
-</form>
+  </form>
+</div>
