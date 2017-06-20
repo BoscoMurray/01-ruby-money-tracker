@@ -8,17 +8,18 @@
   </ul>
 </div>
 
-<li>
-  <a href="/tags/new">Add Tag</a>
-</li>
+<div id="link">
+    <p><a href="/tags/new">Add Tag</a></p>
+</div>
 
-<br>
-<h3>Total Spent by Tag:</h3>
-<table>
-<% @tags.each do |tag| %>
-  <tr>
-    <td><%= tag.name.upcase %></td>
-    <td><%= sprintf( "%.2f", Tag.total_by_id(tag.id).to_f / 100 ) %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="table">
+  <h4>Total Spent by Tag</h4>
+  <table>
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.name.upcase %></td>
+      <td><%= sprintf( "%.2f", Tag.total_by_id(tag.id).to_f / 100 ) %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
