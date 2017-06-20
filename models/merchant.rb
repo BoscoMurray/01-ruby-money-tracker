@@ -27,6 +27,12 @@ class Merchant
     return Merchant.map_items( SqlRunner.run(sql) )
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM merchants WHERE id = #{id}"
+    result = SqlRunner.run(sql)[ 0 ]
+    return Merchant.new(result)
+  end
+
   def self.txs_by_id(id)
     sql = "SELECT * FROM transactions WHERE merchant_id = #{ id }"
     return Transaction.map_items( SqlRunner.run(sql) )

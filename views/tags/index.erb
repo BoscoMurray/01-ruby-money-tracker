@@ -20,7 +20,7 @@
     </tr>
     <% @tags.each do |tag| %>
     <tr>
-      <td><%= tag.name.upcase %></td>
+      <td><a href="/tags/<%= tag.id %>/edit"><%= tag.name.upcase %></td>
       <td>£ <%= sprintf( "%.2f", Tag.total_by_id(tag.id).to_f / 100 ) %></td>
     </tr>
     <% end %>

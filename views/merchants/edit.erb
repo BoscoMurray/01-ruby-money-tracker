@@ -1,0 +1,30 @@
+<div id="nav">
+  <ul>
+    <li><a href="/">Overview</a></li>
+    <li><a href="/transactions">Transactions</a></li>
+    <li><a href="/transactions/new">New</a></li>
+    <li><a class="active" href="/merchants">Merchants</a></li>
+    <li><a href="/tags">Tags</a></li>
+  </ul>
+</div>
+
+<div id="edit">
+  <form action="/merchants/<%= @merchant.id %>" method="post">
+    <table>
+      <tr>
+        <th>Merchant</th>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="text" name="name" id="name" value="<%= @merchant.name.upcase %>"/>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+    <input type="submit" value="Save Changes"/>
+    </p>
+
+  </form>
+</div>
