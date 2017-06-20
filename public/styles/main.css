@@ -42,8 +42,12 @@ table {
   padding: 10px 0px 10px 0px;
 }
 
-select, input {
+#edit, #form, select, input {
   width: 102px;
+}
+
+#show input {
+  width: 115px;
 }
 
 .active {
