@@ -1,7 +1,7 @@
 #this-month {
   margin: 0 auto;
   margin-top: 80px;
-  border: 5px double black;
+  border: 1px solid #333;
   width: 445px;
 }
 
@@ -12,11 +12,25 @@
 #last-3 {
   margin: 0 auto;
   margin-top: 46px;
-  border: 5px double black;
+  /*border: 1px solid #333;*/
   width: 445px;
 }
 
 #last-3 div {
   display: inline-block;
   margin: 0 ;
+}
+
+#last-3-top {
+  margin-top: 5px;
+}
+
+#last-3-bottom {
+  margin-bottom: 5px;
+}
+
+#last-3-container {
+  width: 100px;
+  padding: 10px 0 10px 0;
+  border: 1px solid #333;
 }
