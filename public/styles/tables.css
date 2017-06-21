@@ -1,14 +1,24 @@
 table {
   margin: 0 auto;
-  padding: 20px 0px 20px 0px;
-  /*border-collapse: collapse;*/
+  border-collapse: collapse;
+  width: 100%;
+  line-height: 1.5;
+}
+
+th {
+  color: white;
+  background-color: #4CAF50;
+  border: 1px solid #333;
+}
+
+td {
+  border: 1px solid #333;
 }
 
 #table {
   margin: 0 auto;
-  margin-top: 45px;
-  border: 5px double black;
-  width: 445px;
+  margin-top: 40px;
+  width: 452px;
 }
 
 #table h4 {
@@ -18,14 +28,13 @@ table {
 #total {
   margin: 0 auto;
   margin-top: 80px;
-  border: 5px double black;
-  width: 445px;
+  border: 1px solid #333;
+  width: 452px;
 }
 
 #show, #edit, #new {
   margin: 0 auto;
   margin-top: 80px;
-  border: 5px double black;
   width: 445px;
 }
 
@@ -44,6 +53,5 @@ table {
 #tm-saved {
   margin: 0 auto;
   margin-top: 45px;
-  border: 5px double black;
   width: 445px;
 }

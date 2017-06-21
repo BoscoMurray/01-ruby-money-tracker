@@ -19,8 +19,8 @@
     <tr>
       <td><%= @transaction.date %></td>
       <td>£ <%= sprintf( "%.2f", @transaction.amount.to_f / 100 ) %></td>
-      <td><%= @transaction.merchant %></td>
-      <td><%= @transaction.tag %></td>
+      <td><%= @transaction.merchant.upcase %></td>
+      <td><%= @transaction.tag.upcase %></td>
     </tr>
   </table>
 

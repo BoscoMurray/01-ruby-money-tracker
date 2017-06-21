@@ -20,10 +20,12 @@
 </div>
 
 <div id="tm-saved">
-  <h4>Saved Merchants</h4>
   <div id="saved-table">
     <table>
-    <% @merchants.each do |merchant| %>
+      <tr>
+        <th>Saved Tags</th>
+      </tr>
+      <% @merchants.each do |merchant| %>
       <tr>
         <td><%= merchant.name.upcase %></td>
       </tr>

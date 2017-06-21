@@ -20,9 +20,11 @@
 </div>
 
 <div id="tm-saved">
-  <h4>Saved Tags</h4>
   <table>
-  <% @tags.each do |tag| %>
+    <tr>
+      <th>Saved Tags</th>
+    </tr>
+    <% @tags.each do |tag| %>
     <tr>
       <td><%= tag.name.upcase %></td>
     </tr>
