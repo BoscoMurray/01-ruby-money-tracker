@@ -1,3 +1,19 @@
+table {
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+}
+
+#table {
+  margin: 0 auto;
+  margin-top: 45px;
+  border: 5px double black;
+  width: 445px;
+}
+
+#table h4 {
+  padding: 0 0 0 0;
+}
+
 #total {
   margin: 0 auto;
   margin-top: 80px;
@@ -5,23 +21,17 @@
   width: 445px;
 }
 
-#form {
+#show, #edit, #new {
   margin: 0 auto;
   margin-top: 80px;
   border: 5px double black;
   width: 445px;
 }
 
-#show {
-  margin: 0 auto;
-  margin-top: 80px;
-  border: 5px double black;
-  width: 445px;
+#show input {
+  width: 115px;
 }
 
-#edit {
-  margin: 0 auto;
-  margin-top: 80px;
-  border: 5px double black;
-  width: 445px;
+#edit, #new select, input {
+  width: 102px;
 }

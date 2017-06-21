@@ -1,13 +1,13 @@
- #this-month {
+#this-month {
   margin: 0 auto;
   margin-top: 80px;
   border: 5px double black;
   width: 445px;
- }
+}
 
- #this-month div {
+#this-month div {
   margin: 20px auto;
- }
+}
 
 #last-3 {
   margin: 0 auto;

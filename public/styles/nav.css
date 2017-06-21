@@ -1,0 +1,35 @@
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  float: left;
+  padding: 0;
+  background-color: #333;
+ }
+
+#nav ul {
+  list-style: none;
+  width: 460px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  border-right: 1px solid #bbb;
+ }
+
+ #nav li:first-child a {
+  border-left: 1px solid #bbb;
+}
+
+.active {
+    background-color: #4CAF50;
+}
