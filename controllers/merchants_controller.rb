@@ -15,7 +15,7 @@ end
 post '/merchants' do
   merchant = Merchant.new(params)
   merchant.save
-  redirect to("/merchants")
+  redirect to("/merchants/new")
 end
 
 get '/merchants/:id/edit' do

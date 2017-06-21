@@ -48,6 +48,7 @@ td {
 
 #edit select, input {
   width: 102px;
+  /*line-height: 1.5;*/
 }
 
 #tm-saved {

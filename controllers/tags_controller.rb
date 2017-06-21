@@ -15,7 +15,7 @@ end
 post '/tags' do
   tag = Tag.new(params)
   tag.save
-  redirect to("/tags")
+  redirect to("/tags/new")
 end
 
 get '/tags/:id/edit' do
