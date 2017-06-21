@@ -17,14 +17,14 @@
     <% if @from %>
       <input type="text" name="from" id="from" value="<%= @from %>"/>
     <% else %>
-      <input type="text" name="from" id="from"/>
+      <input type="text" name="from" id="from" placeholder="YYYY-MM-DD"/>
     <% end %>
 
     <label for="to">To:</label>
     <% if @to %>
       <input type="text" name="to" id="to" value="<%= @to %>"/>
     <% else %>
-      <input type="text" name="to" id="to"/>
+      <input type="text" name="to" id="to" placeholder="YYYY-MM-DD"/>
     <% end %>
 
     <input type="submit" value="Filter By Date"/>
@@ -41,12 +41,12 @@
       <th>Tag</th>
     </tr>
     <% @transactions.each do |transaction| %>
-    <tr>
-      <td><%= transaction.date %></td>
-      <td><a href="/transactions/<%= transaction.id %>">£ <%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
-      <td><%= transaction.merchant.upcase %></td>
-      <td><%= transaction.tag.upcase %></td>
-    </tr>
+      <tr style="background-color: white;">
+        <td><%= transaction.date %></td>
+        <td class="amount"><a href="/transactions/<%= transaction.id %>">£ <%= sprintf( "%.2f", transaction.amount.to_f / 100 ) %></td>
+        <td><%= transaction.merchant.upcase %></td>
+        <td><%= transaction.tag.upcase %></td>
+      </tr>
     <% end %>
   </table>
 </div>

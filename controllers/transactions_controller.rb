@@ -42,6 +42,8 @@ get '/transactions/:id/edit' do
 end
 
 post '/transactions/:id' do
+  params['amount'] = params['amount'].to_f * 100
+  params['amount'] = params['amount'].to_i
   transaction = Transaction.new(params)
   transaction.update
   redirect to "/transactions/#{ params['id'] }"
