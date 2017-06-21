@@ -30,11 +30,16 @@ td {
   padding-left: 3px;
 }
 
+#table td {
+  background-color: white;
+}
+
 #total {
   margin: 0 auto;
   margin-top: 80px;
   border: 1px solid #333;
   width: 452px;
+  background-color: #bfd9bf;
 }
 
 #show, #edit, #new {
@@ -55,6 +60,14 @@ td {
   width: 102px;
 }
 
+#edit th, td {
+  text-align: center;
+}
+
+#edit td {
+  background-color: white;
+}
+
 #tm-saved {
   margin: 0 auto;
   margin-top: 45px;
@@ -63,4 +76,16 @@ td {
 
 #tm-saved th, td {
   text-align: center;
+}
+
+#tm-saved td {
+  background-color: white;
+}
+
+#show th, td {
+  text-align: center;
+}
+
+#show td {
+  background-color: white;
 }

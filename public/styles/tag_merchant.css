@@ -1,14 +1,16 @@
-#tm-link {
+#tm-link, #tm-new {
   margin: 0 auto;
   margin-top: 80px;
   border: 1px solid #333;
+}
+
+#tm-link {
   width: 445px;
+  background-color: #bfd9bf;
 }
 
 #tm-new {
-  margin: 0 auto;
-  margin-top: 80px;
-  border: 1px solid #333;
   width: 410px;
   padding: 17px;
+  background-color: #bfd9bf;
 }
