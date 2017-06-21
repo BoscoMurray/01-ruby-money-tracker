@@ -36,16 +36,16 @@
   margin-bottom: 5px;
 }
 
-#last-3-container-red {
-  width: 100px;
-  padding: 10px 0 10px 0;
+#last-3-container-green, #last-3-container-red {
+  width: 102px;
+  padding: 15px 0 15px 0;
   border: 1px solid #333;
-  background-color: #d57676;
 }
 
 #last-3-container-green {
-  width: 100px;
-  padding: 10px 0 10px 0;
-  border: 1px solid #333;
   background-color: #bfd9bf;
+}
+
+#last-3-container-red {
+  background-color: #d57676;
 }

@@ -29,6 +29,20 @@
 <% end %>
 
 <div id="last-3">
+
+  <% if @total_minus4.to_f <= 100000.to_f %>
+    <div id="last-3-container-green">
+      <h4 id="last-3-top"><%= @month_minus4 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus4.to_f / 100) %></h4>
+    </div>
+  <% else %>
+    <div id="last-3-container-red">
+      <h4 id="last-3-top"><%= @month_minus4 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus4.to_f / 100) %></h4>
+    </div>
+  <% end %>
+  <div> </div>
+
   <% if @total_minus3.to_f <= 100000.to_f %>
     <div id="last-3-container-green">
       <h4 id="last-3-top"><%= @month_minus3 %></h4>
@@ -41,7 +55,7 @@
     </div>
   <% end %>
   <div> </div>
-  <div> </div>
+
   <% if @total_minus2.to_f <= 100000.to_f %>
     <div id="last-3-container-green">
       <h4 id="last-3-top"><%= @month_minus2 %></h4>
@@ -54,7 +68,7 @@
     </div>
   <% end %>
   <div> </div>
-  <div> </div>
+
   <% if @total_minus1.to_f <= 100000.to_f %>
     <div id="last-3-container-green">
       <h4 id="last-3-top"><%= @month_minus1 %></h4>
@@ -66,4 +80,5 @@
       <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
     </div>
   <% end %>
+  
 </div>

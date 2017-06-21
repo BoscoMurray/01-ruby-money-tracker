@@ -350,7 +350,69 @@ Merchant.delete_all
   })
 @transaction36.save
 
+@transaction37 = Transaction.new({
+  "date" => "2017-02-01",
+  "amount" => 12000,
+  "merchant_id" => @merchant1.id,
+  "tag_id" => @tag6.id
+  })
+@transaction37.save
 
+@transaction38 = Transaction.new({
+  "date" => "2017-02-10",
+  "amount" => 8000,
+  "merchant_id" => @merchant3.id,
+  "tag_id" => @tag2.id
+  })
+@transaction38.save
+
+@transaction39 = Transaction.new({
+  "date" => "2017-02-18",
+  "amount" => 22000,
+  "merchant_id" => @merchant4.id,
+  "tag_id" => @tag3.id
+  })
+@transaction39.save
+
+@transaction40 = Transaction.new({
+  "date" => "2017-02-25",
+  "amount" => 1000,
+  "merchant_id" => @merchant2.id,
+  "tag_id" => @tag6.id
+  })
+@transaction40.save
+
+@transaction41 = Transaction.new({
+  "date" => "2017-02-03",
+  "amount" => 12000,
+  "merchant_id" => @merchant1.id,
+  "tag_id" => @tag6.id
+  })
+@transaction41.save
+
+@transaction42 = Transaction.new({
+  "date" => "2017-02-16",
+  "amount" => 8000,
+  "merchant_id" => @merchant3.id,
+  "tag_id" => @tag2.id
+  })
+@transaction42.save
+
+@transaction43 = Transaction.new({
+  "date" => "2017-02-14",
+  "amount" => 22000,
+  "merchant_id" => @merchant4.id,
+  "tag_id" => @tag3.id
+  })
+@transaction43.save
+
+@transaction44 = Transaction.new({
+  "date" => "2017-02-20",
+  "amount" => 10000,
+  "merchant_id" => @merchant2.id,
+  "tag_id" => @tag6.id
+  })
+@transaction44.save
 
 
 binding.pry
