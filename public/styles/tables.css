@@ -1,6 +1,7 @@
 table {
   margin: 0 auto;
-  padding: 10px 0px 10px 0px;
+  padding: 20px 0px 20px 0px;
+  /*border-collapse: collapse;*/
 }
 
 #table {
@@ -32,6 +33,17 @@ table {
   width: 115px;
 }
 
-#edit, #new select, input {
+#new select, input {
   width: 102px;
+}
+
+#edit select, input {
+  width: 102px;
+}
+
+#tm-saved {
+  margin: 0 auto;
+  margin-top: 45px;
+  border: 5px double black;
+  width: 445px;
 }
