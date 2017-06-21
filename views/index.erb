@@ -18,20 +18,41 @@
 </div>
 
 <div id="last-3">
-  <div id="last-3-container" style="background-color: #d57676">
-    <h4 id="last-3-top"><%= @month_minus3 %></h4>
-    <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
-  </div>
+  <% if @total_minus3.to_f <= 100000.to_f %>
+    <div id="last-3-container" style="background-color: #bfd9bf">
+      <h4 id="last-3-top"><%= @month_minus3 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
+    </div>
+  <% else %>
+    <div id="last-3-container" style="background-color: #d57676">
+      <h4 id="last-3-top"><%= @month_minus3 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus3.to_f / 100) %></h4>
+    </div>
+  <% end %>
   <div> </div>
   <div> </div>
-  <div id="last-3-container" style="background-color: #d57676">
-    <h4 id="last-3-top"><%= @month_minus2 %></h4>
-    <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
-  </div>
+  <% if @total_minus2.to_f <= 100000.to_f %>
+    <div id="last-3-container" style="background-color: #bfd9bf">
+      <h4 id="last-3-top"><%= @month_minus2 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
+    </div>
+  <% else %>
+    <div id="last-3-container" style="background-color: #d57676">
+      <h4 id="last-3-top"><%= @month_minus2 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus2.to_f / 100) %></h4>
+    </div>
+  <% end %>
   <div> </div>
   <div> </div>
-  <div id="last-3-container" style="background-color: #d57676">
-    <h4 id="last-3-top"><%= @month_minus1 %></h4>
-    <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
-  </div>
+  <% if @total_minus1.to_f <= 100000.to_f %>
+    <div id="last-3-container" style="background-color: #bfd9bf">
+      <h4 id="last-3-top"><%= @month_minus1 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
+    </div>
+  <% else %>
+    <div id="last-3-container" style="background-color: #d57676">
+      <h4 id="last-3-top"><%= @month_minus1 %></h4>
+      <h4 id="last-3-bottom">£ <%= sprintf("%.2f", @total_minus1.to_f / 100) %></h4>
+    </div>
+  <% end %>
 </div>
