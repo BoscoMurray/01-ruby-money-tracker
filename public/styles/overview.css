@@ -1,11 +1,19 @@
-#this-month {
+#this-month-green {
+  background-color: #bfd9bf;
+}
+
+#this-month-red {
+  background-color: #d57676;
+}
+
+#this-month-green, #this-month-red {
   margin: 0 auto;
   margin-top: 80px;
   border: 1px solid #333;
   width: 445px;
 }
 
-#this-month div {
+#this-month-green div, #this-month-red div {
   margin: 20px auto;
 }
 
